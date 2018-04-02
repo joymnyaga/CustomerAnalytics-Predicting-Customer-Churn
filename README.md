@@ -1,5 +1,5 @@
 # Predicting Customer Churn in a Telco Company
-A  mini project that utilizes machine learning algorithms  to predict customer churn for a telco company leveraging on classification models such as Random Forest and Naive Bayes..
+A  mini project that utilizes machine learning algorithms  to predict customer churn for a telco company, leveraging on classification models such as Random Forest and Naive Bayes.
 
 **Data Attributes**
 
