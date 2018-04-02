@@ -3,7 +3,7 @@ A  mini project that utilizes machine learning algorithms  to predict customer c
 
 **Data Attributes**
 
-7032 observations of 20 variables
+7043 observations of 21 variables
 
 1.CustomerID
 2.Gender
