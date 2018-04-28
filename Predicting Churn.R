@@ -21,7 +21,7 @@ str(data) #New dataset
 data[1]<-NULL
 str(data) #Confirm removal
 
-#Spilt datset to train and test data
+#Split dataset to train and test data
 library(caTools)
 set.seed(123) #Ensures the same random numbers are always generated 
 sample = sample.split(data,SplitRatio = 0.75) 
