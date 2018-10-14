@@ -21,7 +21,7 @@ str(data) #New dataset
 data[1]<-NULL
 str(data) #Confirm removal
 
-#Split dataset to train and test data
+#Split dataset into train and test data
 library(caTools)
 set.seed(123) #Ensures the same random numbers are always generated 
 sample = sample.split(data,SplitRatio = 0.75) 
@@ -29,16 +29,15 @@ train =subset(data,sample ==TRUE)
 test=subset(data, sample==FALSE)
 str(train)
 
-#MODEL APPLICATION
+#PART TWO:MODEL APPLICATION
 #(1) RANDOM FOREST
 #Fit model
 library(randomForest)
 rf <- randomForest(Churn ~ ., data = train)
-rf
 predicted_rf<-predict(rf,test)
 
 #Prediction results
-table(predicted_rf)
+table(predicted_rf) #Tabulate data
 
 #Visualize results
 plot(rf, main="randomForest model")
@@ -53,11 +52,10 @@ confusionMatrix(predicted_rf,test$Churn) #Accuracy = 79.81%
 #Fit model
 library(e1071)
 nb<-naiveBayes(Churn ~ ., data = train)
-nb
 predicted_nb= predict(nb,test)
        
 #Prediction results
-table(predicted_nb)
+table(predicted_nb) #Tabulate data
 
 #Visualize results
 plot(predicted_nb, test$Churn, main="Predicted Vs. Actual - Naive Bayes", ylab="Predicted",xlab="Actual")
@@ -67,5 +65,5 @@ confusionMatrix(predicted_nb,test$Churn) #Accuracy: 73.83%
 
 #Prediction Accuracy 
 #randomForest - 79.81% 
-#Naive Byayes - 73.81%
+#Naive Bayes - 73.81%
 
