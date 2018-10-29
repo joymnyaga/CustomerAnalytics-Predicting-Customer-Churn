@@ -9,13 +9,12 @@ str(data)
 #Test for missing values
 sum(is.na(data)) #Total missing values 
 sapply(data, function(x) sum(is.na(x))) #Column wise
-mean(is.na(data)) #Percentage of values in datset missing
+mean(is.na(data)) #Percentage of values in dataset missing
 
 #Remove rows with missing values
 data<-na.omit(data)
 sum(is.na(data)) #Confirm removal of missing values
 sapply(data, function(x) sum(is.na(x)))
-str(data) #New dataset
 
 #Remove customer ID column
 data[1]<-NULL
@@ -65,5 +64,5 @@ confusionMatrix(predicted_nb,test$Churn) #Accuracy: 73.83%
 
 #Prediction Accuracy 
 #randomForest - 79.81% 
-#Naive Bayes - 73.81%
+#Naive Bayes - 73.83%
 
